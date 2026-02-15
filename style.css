@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap');
+
+:root {
+    --win-gray: #C0C0C0;
+    --win-blue: #0004ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--win-blue);
+    background-image: url('image/moodboard blue portfolio (1)-Récupéré-Récupéré-Récupéré copie.png'); /* Vérifie bien le nom du fichier */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Courier New', monospace;
+    overflow-y: hidden;
+    color: black;
+}
+
+/* HEADER & NAVIGATION */
+.menu-fixe {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+    padding: 20px 0;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.title {
+    color: white;
+    text-shadow: 3px 3px 0px black;
+    margin: 0 0 15px 0;
+    font-size: 2.5rem;
+}
+
+.onglet {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.onglet a, .btn-retro {
+    background-color: var(--win-gray);
+    color: black;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #444;
+    border-bottom: 2px solid #444;
+    text-decoration: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.onglet a:hover, .btn-retro:hover {
+    border-top: 2px solid #444;
+    border-left: 2px solid #444;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    background-color: #a0a0a0;
+}
+
+/* SCROLL HORIZONTAL */
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    height: 100vh;
+}
+
+.page {
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    padding-top: 100px;
+}
+
+/* EFFET FENÊTRE WINDOWS */
+.window {
+    background: var(--win-gray);
+    border: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
+}
+
+.window-header {
+    background: linear-gradient(90deg, darkblue, #1084d0);
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.window-content {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    min-height: 200px;
+}
+
+/* PROJETS */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Modification de la carte projet */
+.project-card {
+    border: 1px inset white;
+    padding: 10px; /* J'ai augmenté un peu le padding pour aérer */
+    background: #eee;
+    /* Ajout de Flexbox pour une gestion verticale fluide */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pousse le bouton tout en bas */
+    gap: 8px; /* Ajoute de l'espace entre le titre, la description, les tags et le bouton */
+}
+
+/* Nouveau style pour le conteneur des tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux tags de passer à la ligne si besoin */
+    gap: 5px; /* Espace entre chaque petit tag bleu */
+    margin-bottom: 5px; /* Espace supplémentaire avant le bouton */
+}
+
+.tag {
+    background: blue;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+}
+
+.liens {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
