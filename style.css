@@ -84,6 +84,8 @@ body {
     align-items: center;
     scroll-snap-align: start;
     padding-top: 100px;
+    scroll-snap-align: center; 
+    scroll-snap-stop: always;
 }
 
 /* EFFET FENÊTRE WINDOWS */
@@ -151,4 +153,59 @@ body {
     margin-top: 20px;
     display: flex;
     gap: 10px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobiles & Tablettes)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    /* 1. Ajustement du Menu et du Titre */
+    .title {
+        font-size: 1.8rem; 
+        margin-bottom: 10px;
+    }
+    
+    .onglet {
+        gap: 8px;
+        flex-wrap: wrap; /* Laisse les boutons passer à la ligne s'il n'y a pas la place */
+    }
+    
+    .onglet a {
+        padding: 5px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* 2. Ajustement de la Fenêtre Principale */
+    .window {
+        width: 90%; /* Prend plus de largeur sur petit écran */
+        max-height: 70vh; /* Empêche la fenêtre de déborder de l'écran en hauteur */
+        overflow-y: auto; /* Active le défilement VERTICAL à l'intérieur de la fenêtre ! */
+        margin-top: 50px; /* Compense la hauteur du menu fixe */
+    }
+
+    .window-content {
+        padding: 15px; /* Réduit les marges internes pour gagner de la place */
+    }
+
+    /* 3. Transformation des Projets en "Mini-Fenêtres" */
+    .project-grid {
+        grid-template-columns: 1fr; /* Passe de 2 colonnes à 1 seule colonne */
+        gap: 25px; /* Espacement généreux entre chaque projet */
+    }
+
+    .project-card {
+        /* On donne aux cartes le style exact de vos fenêtres Windows */
+        background: var(--win-gray);
+        border: 2px solid white;
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
+        box-shadow: 4px 4px 0px rgba(0,0,0,0.4);
+        padding: 15px;
+    }
+    
+    /* On force la description à être un peu plus lisible sur mobile */
+    .project-card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
 }
